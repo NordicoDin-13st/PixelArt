@@ -1,0 +1,760 @@
+/**
+ * Warm neutral design system
+ * Compact UI tokens for the pixel art workspace
+ */
+
+/* Touch Optimization */
+* {
+  touch-action: manipulation;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  touch-action: manipulation;
+}
+
+/* Remove tap highlight on iOS */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Prevent horizontal scroll */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+:root {
+  /* ============================================
+     WARM NEUTRAL COLOR PALETTE
+     ============================================ */
+
+  /* Primary Colors */
+  --claude-near-black: #141413;
+  --claude-terracotta: #c96442;
+  --claude-coral: #d97757;
+
+  /* Error & Focus */
+  --claude-error-crimson: #b53333;
+  --claude-focus-blue: #3898ec;
+
+  /* Surface & Background */
+  --claude-parchment: #f5f4ed;
+  --claude-ivory: #faf9f5;
+  --claude-pure-white: #ffffff;
+  --claude-warm-sand: #e8e6dc;
+  --claude-dark-surface: #30302e;
+
+  /* Text Colors */
+  --claude-charcoal-warm: #4d4c48;
+  --claude-olive-gray: #5e5d59;
+  --claude-stone-gray: #87867f;
+  --claude-dark-warm: #3d3d3a;
+  --claude-warm-silver: #b0aea5;
+
+  /* Borders & Rings */
+  --claude-border-cream: #f0eee6;
+  --claude-border-warm: #e8e6dc;
+  --claude-border-dark: #30302e;
+  --claude-ring-warm: #d1cfc5;
+  --claude-ring-subtle: #dedc01;
+  --claude-ring-deep: #c2c0b6;
+
+  /* ============================================
+     TYPOGRAPHY SYSTEM
+     ============================================ */
+
+  /* Font Families */
+  --claude-font-serif: 'Georgia', serif;
+  --claude-font-sans: 'Arial', -apple-system, BlinkMacSystemFont, sans-serif;
+  --claude-font-mono: 'Arial', monospace;
+
+  /* Font Sizes - Compacted */
+  --claude-size-display: 48px;
+  --claude-size-section-heading: 40px;
+  --claude-size-subheading-large: 28px;
+  --claude-size-subheading: 24px;
+  --claude-size-subheading-small: 20px;
+  --claude-size-feature-title: 16px;
+  --claude-size-body-serif: 14px;
+  --claude-size-body-large: 16px;
+  --claude-size-body-nav: 14px;
+  --claude-size-body-standard: 14px;
+  --claude-size-body-small: 13px;
+  --claude-size-caption: 12px;
+  --claude-size-label: 11px;
+  --claude-size-overline: 10px;
+  --claude-size-micro: 9px;
+  --claude-size-code: 13px;
+
+  /* ============================================
+     SPACING SYSTEM (6px base unit - compact)
+     ============================================ */
+
+  --claude-space-1: 3px;
+  --claude-space-2: 6px;
+  --claude-space-3: 9px;
+  --claude-space-4: 12px;
+  --claude-space-5: 15px;
+  --claude-space-6: 18px;
+  --claude-space-8: 24px;
+  --claude-space-10: 30px;
+  --claude-space-12: 36px;
+
+  /* ============================================
+     BORDER RADIUS SCALE
+     ============================================ */
+
+  --claude-radius-sharp: 2px;
+  --claude-radius-subtle: 4px;
+  --claude-radius-comfortable: 6px;
+  --claude-radius-generous: 8px;
+  --claude-radius-very: 12px;
+  --claude-radius-highly: 16px;
+  --claude-radius-maximum: 20px;
+
+  /* ============================================
+     SHADOW SYSTEM
+     ============================================ */
+
+  --claude-shadow-ring: 0px 0px 0px 1px var(--claude-ring-warm);
+  --claude-shadow-ring-subtle: 0px 0px 0px 1px var(--claude-ring-subtle);
+  --claude-shadow-ring-deep: 0px 0px 0px 1px var(--claude-ring-deep);
+  --claude-shadow-whisper: rgba(0, 0, 0, 0.05) 0px 4px 24px;
+  --claude-shadow-inset: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15);
+
+  /* ============================================
+     TRANSITIONS
+     ============================================ */
+
+  --claude-transition-fast: 150ms;
+  --claude-transition-normal: 200ms;
+  --claude-transition-slow: 300ms;
+
+  /* ============================================
+     Z-INDEX SCALE
+     ============================================ */
+
+  --claude-z-dropdown: 1000;
+  --claude-z-sticky: 1020;
+  --claude-z-fixed: 1030;
+  --claude-z-modal-backdrop: 1040;
+  --claude-z-modal: 1050;
+  --claude-z-popover: 1060;
+  --claude-z-tooltip: 1070;
+
+  /* ============================================
+     TOUCH TARGETS
+     ============================================ */
+
+  --claude-touch-min: 36px;
+  --claude-touch-comfortable: 40px;
+}
+
+/* ============================================
+   TYPOGRAPHY CLASSES
+   ============================================ */
+
+.claude-heading-display {
+  font-family: var(--claude-font-serif);
+  font-size: var(--claude-size-display);
+  font-weight: 500;
+  line-height: 1.10;
+  color: var(--claude-near-black);
+  letter-spacing: normal;
+}
+
+.claude-heading-section {
+  font-family: var(--claude-font-serif);
+  font-size: var(--claude-size-section-heading);
+  font-weight: 500;
+  line-height: 1.20;
+  color: var(--claude-near-black);
+  letter-spacing: normal;
+}
+
+.claude-heading-large {
+  font-family: var(--claude-font-serif);
+  font-size: var(--claude-size-subheading-large);
+  font-weight: 500;
+  line-height: 1.30;
+  color: var(--claude-near-black);
+  letter-spacing: normal;
+}
+
+.claude-heading {
+  font-family: var(--claude-font-serif);
+  font-size: var(--claude-size-subheading);
+  font-weight: 500;
+  line-height: 1.10;
+  color: var(--claude-near-black);
+  letter-spacing: normal;
+}
+
+.claude-heading-small {
+  font-family: var(--claude-font-serif);
+  font-size: var(--claude-size-subheading-small);
+  font-weight: 500;
+  line-height: 1.20;
+  color: var(--claude-near-black);
+  letter-spacing: normal;
+}
+
+.claude-feature-title {
+  font-family: var(--claude-font-serif);
+  font-size: var(--claude-size-feature-title);
+  font-weight: 500;
+  line-height: 1.20;
+  color: var(--claude-near-black);
+  letter-spacing: normal;
+}
+
+.claude-body-serif {
+  font-family: var(--claude-font-serif);
+  font-size: var(--claude-size-body-serif);
+  font-weight: 400;
+  line-height: 1.60;
+  color: var(--claude-olive-gray);
+  letter-spacing: normal;
+}
+
+.claude-body-large {
+  font-family: var(--claude-font-sans);
+  font-size: var(--claude-size-body-large);
+  font-weight: 400;
+  line-height: 1.60;
+  color: var(--claude-olive-gray);
+  letter-spacing: normal;
+}
+
+.claude-body {
+  font-family: var(--claude-font-sans);
+  font-size: var(--claude-size-body-standard);
+  font-weight: 400;
+  line-height: 1.50;
+  color: var(--claude-olive-gray);
+  letter-spacing: normal;
+}
+
+.claude-body-small {
+  font-family: var(--claude-font-sans);
+  font-size: var(--claude-size-body-small);
+  font-weight: 400;
+  line-height: 1.50;
+  color: var(--claude-stone-gray);
+  letter-spacing: normal;
+}
+
+.claude-caption {
+  font-family: var(--claude-font-sans);
+  font-size: var(--claude-size-caption);
+  font-weight: 400;
+  line-height: 1.43;
+  color: var(--claude-stone-gray);
+  letter-spacing: normal;
+}
+
+.claude-label {
+  font-family: var(--claude-font-sans);
+  font-size: var(--claude-size-label);
+  font-weight: 500;
+  line-height: 1.60;
+  color: var(--claude-olive-gray);
+  letter-spacing: 0.12px;
+  text-transform: none;
+}
+
+.claude-overline {
+  font-family: var(--claude-font-sans);
+  font-size: var(--claude-size-overline);
+  font-weight: 400;
+  line-height: 1.60;
+  color: var(--claude-stone-gray);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* ============================================
+   BUTTON COMPONENTS
+   ============================================ */
+
+/* Warm Sand Button (Secondary) */
+.claude-button-warm-sand {
+  min-height: var(--claude-touch-min);
+  padding: 0px 8px 0px 6px;
+  font-family: var(--claude-font-sans);
+  font-size: var(--claude-size-body-small);
+  font-weight: 400;
+  line-height: 1.40;
+  color: var(--claude-charcoal-warm);
+  background-color: var(--claude-warm-sand);
+  border: none;
+  border-radius: var(--claude-radius-subtle);
+  box-shadow: var(--claude-shadow-ring);
+  cursor: pointer;
+  transition: all var(--claude-transition-fast) ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--claude-space-1);
+  text-decoration: none;
+}
+
+.claude-button-warm-sand:hover {
+  box-shadow: var(--claude-shadow-ring-deep);
+}
+
+.claude-button-warm-sand:active {
+  box-shadow: var(--claude-shadow-inset);
+}
+
+.claude-button-warm-sand:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* White Surface Button */
+.claude-button-white {
+  min-height: var(--claude-touch-min);
+  padding: 6px 10px 6px 8px;
+  font-family: var(--claude-font-sans);
+  font-size: var(--claude-size-body-small);
+  font-weight: 400;
+  line-height: 1.40;
+  color: var(--claude-near-black);
+  background-color: var(--claude-pure-white);
+  border: none;
+  border-radius: var(--claude-radius-comfortable);
+  box-shadow: var(--claude-shadow-whisper);
+  cursor: pointer;
+  transition: all var(--claude-transition-fast) ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--claude-space-1);
+  text-decoration: none;
+}
+
+.claude-button-white:hover {
+  background-color: var(--claude-warm-sand);
+}
+
+/* Brand Terracotta Button (Primary CTA) */
+.claude-button-terracotta {
+  min-height: var(--claude-touch-min);
+  padding: 0px 8px 0px 6px;
+  font-family: var(--claude-font-sans);
+  font-size: var(--claude-size-body-small);
+  font-weight: 400;
+  line-height: 1.40;
+  color: var(--claude-ivory);
+  background-color: var(--claude-terracotta);
+  border: none;
+  border-radius: var(--claude-radius-comfortable);
+  box-shadow: var(--claude-shadow-ring);
+  cursor: pointer;
+  transition: all var(--claude-transition-fast) ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--claude-space-1);
+  text-decoration: none;
+}
+
+.claude-button-terracotta:hover {
+  box-shadow: var(--claude-shadow-ring-deep);
+}
+
+.claude-button-terracotta:active {
+  box-shadow: var(--claude-shadow-inset);
+}
+
+/* Dark Charcoal Button */
+.claude-button-dark {
+  min-height: var(--claude-touch-min);
+  padding: 0px 8px 0px 6px;
+  font-family: var(--claude-font-sans);
+  font-size: var(--claude-size-body-small);
+  font-weight: 400;
+  line-height: 1.40;
+  color: var(--claude-ivory);
+  background-color: var(--claude-dark-surface);
+  border: none;
+  border-radius: var(--claude-radius-subtle);
+  box-shadow: var(--claude-shadow-ring);
+  cursor: pointer;
+  transition: all var(--claude-transition-fast) ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--claude-space-1);
+  text-decoration: none;
+}
+
+.claude-button-dark:hover {
+  box-shadow: var(--claude-shadow-ring-deep);
+}
+
+/* ============================================
+   CARD & CONTAINER COMPONENTS
+   ============================================ */
+
+.claude-card {
+  background-color: var(--claude-ivory);
+  border: 1px solid var(--claude-border-cream);
+  border-radius: var(--claude-radius-comfortable);
+  box-shadow: var(--claude-shadow-whisper);
+  padding: var(--claude-space-4);
+  transition: all var(--claude-transition-fast) ease;
+}
+
+.claude-card-featured {
+  background-color: var(--claude-ivory);
+  border: 1px solid var(--claude-border-cream);
+  border-radius: var(--claude-radius-very);
+  box-shadow: var(--claude-shadow-whisper);
+  padding: var(--claude-space-6);
+}
+
+.claude-card-hero {
+  background-color: var(--claude-ivory);
+  border: 1px solid var(--claude-border-cream);
+  border-radius: var(--claude-radius-maximum);
+  box-shadow: var(--claude-shadow-whisper);
+  padding: var(--claude-space-8);
+}
+
+.claude-card-interactive {
+  background-color: var(--claude-ivory);
+  border: 1px solid var(--claude-border-cream);
+  border-radius: var(--claude-radius-comfortable);
+  box-shadow: var(--claude-shadow-ring);
+  padding: var(--claude-space-6);
+  cursor: pointer;
+  transition: all var(--claude-transition-fast) ease;
+}
+
+.claude-card-interactive:hover {
+  box-shadow: var(--claude-shadow-ring-deep);
+}
+
+/* ============================================
+   INPUT & FORM COMPONENTS
+   ============================================ */
+
+.claude-input {
+  min-height: var(--claude-touch-min);
+  padding: 1px 8px;
+  font-family: var(--claude-font-sans);
+  font-size: var(--claude-size-body-small);
+  font-weight: 400;
+  line-height: 1.40;
+  color: var(--claude-near-black);
+  background-color: var(--claude-pure-white);
+  border: 1px solid var(--claude-border-warm);
+  border-radius: var(--claude-radius-subtle);
+  outline: none;
+  transition: all var(--claude-transition-fast) ease;
+}
+
+.claude-input:focus {
+  border-color: var(--claude-focus-blue);
+  box-shadow: 0 0 0 3px rgba(56, 152, 236, 0.15);
+}
+
+.claude-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: var(--claude-warm-sand);
+}
+
+.claude-select {
+  min-height: var(--claude-touch-min);
+  padding: 1px 8px;
+  font-family: var(--claude-font-sans);
+  font-size: var(--claude-size-body-small);
+  font-weight: 400;
+  line-height: 1.40;
+  color: var(--claude-near-black);
+  background-color: var(--claude-pure-white);
+  border: 1px solid var(--claude-border-warm);
+  border-radius: var(--claude-radius-subtle);
+  outline: none;
+  transition: all var(--claude-transition-fast) ease;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%235e5d59' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  padding-right: 24px;
+}
+
+.claude-select:focus {
+  border-color: var(--claude-focus-blue);
+  box-shadow: 0 0 0 3px rgba(56, 152, 236, 0.15);
+}
+
+/* ============================================
+   LAYOUT UTILITIES
+   ============================================ */
+
+.claude-container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--claude-space-3);
+  padding-right: var(--claude-space-3);
+}
+
+@media (min-width: 768px) {
+  .claude-container {
+    padding-left: var(--claude-space-4);
+    padding-right: var(--claude-space-4);
+  }
+}
+
+.claude-grid {
+  display: grid;
+  gap: var(--claude-space-3);
+}
+
+@media (min-width: 640px) {
+  .claude-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .claude-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY UTILITIES
+   ============================================ */
+
+.claude-focusable:focus-visible {
+  outline: 3px solid var(--claude-focus-blue);
+  outline-offset: 2px;
+  border-radius: var(--claude-radius-subtle);
+}
+
+.claude-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.claude-skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  padding: 8px 16px;
+  background-color: var(--claude-terracotta);
+  color: var(--claude-ivory);
+  text-decoration: none;
+  border-radius: var(--claude-radius-generous);
+  z-index: var(--claude-z-tooltip);
+  font-family: var(--claude-font-sans);
+  font-size: var(--claude-size-body-standard);
+  font-weight: 500;
+}
+
+.claude-skip-link:focus {
+  top: 16px;
+}
+
+/* ============================================
+   REDUCED MOTION SUPPORT
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================
+   TOUCH TARGET OPTIMIZATION
+   ============================================ */
+
+@media (pointer: coarse) {
+  button,
+  a,
+  input[type="checkbox"],
+  input[type="radio"] {
+    min-width: var(--claude-touch-min);
+    min-height: var(--claude-touch-min);
+  }
+}
+
+/* Safe area support for notched devices */
+@supports (padding: max(0px)) {
+  .claude-container,
+  header,
+  main,
+  footer {
+    padding-left: max(var(--claude-space-3), env(safe-area-inset-left));
+    padding-right: max(var(--claude-space-3), env(safe-area-inset-right));
+  }
+}
+
+/* ============================================
+   DARK MODE SUPPORT
+   ============================================ */
+
+.dark {
+  /* Dark Mode Surface & Background */
+  --claude-parchment: #1a1a19;
+  --claude-ivory: #242422;
+  --claude-pure-white: #2a2a28;
+  --claude-warm-sand: #3a3a38;
+  --claude-dark-surface: #242422;
+
+  /* Dark Mode Text Colors */
+  --claude-near-black: #faf9f5;
+  --claude-charcoal-warm: #d1cfc5;
+  --claude-olive-gray: #b0aea5;
+  --claude-stone-gray: #87867f;
+  --claude-dark-warm: #dedc01;
+  --claude-warm-silver: #5e5d59;
+
+  /* Dark Mode Borders & Rings */
+  --claude-border-cream: #3a3a38;
+  --claude-border-warm: #3a3a38;
+  --claude-border-dark: #dedc01;
+  --claude-ring-warm: #5e5d59;
+  --claude-ring-subtle: #4d4c48;
+  --claude-ring-deep: #87867f;
+
+  /* Dark Mode Shadows */
+  --claude-shadow-ring: 0px 0px 0px 1px var(--claude-ring-warm);
+  --claude-shadow-ring-subtle: 0px 0px 0px 1px var(--claude-ring-subtle);
+  --claude-shadow-ring-deep: 0px 0px 0px 1px var(--claude-ring-deep);
+  --claude-shadow-whisper: rgba(0, 0, 0, 0.3) 0px 4px 24px;
+  --claude-shadow-inset: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.4);
+}
+
+/* Dark Mode Typography Overrides */
+.dark .claude-heading-display,
+.dark .claude-heading-section,
+.dark .claude-heading-large,
+.dark .claude-heading,
+.dark .claude-heading-small,
+.dark .claude-feature-title {
+  color: var(--claude-near-black);
+}
+
+.dark .claude-body-serif,
+.dark .claude-body-large,
+.dark .claude-body,
+.dark .claude-label {
+  color: var(--claude-charcoal-warm);
+}
+
+.dark .claude-body-small,
+.dark .claude-caption,
+.dark .claude-overline {
+  color: var(--claude-stone-gray);
+}
+
+/* Dark Mode Card & Container */
+.dark .claude-card,
+.dark .claude-card-featured,
+.dark .claude-card-hero,
+.dark .claude-card-interactive {
+  background-color: var(--claude-dark-surface);
+  border-color: var(--claude-border-dark);
+}
+
+/* Dark Mode Button Styles */
+.dark .claude-button-warm-sand {
+  background-color: var(--claude-warm-sand);
+  color: var(--claude-charcoal-warm);
+}
+
+.dark .claude-button-white {
+  background-color: var(--claude-pure-white);
+  color: var(--claude-near-black);
+}
+
+.dark .claude-button-dark {
+  background-color: var(--claude-pure-white);
+  color: var(--claude-near-black);
+}
+
+/* ============================================
+   GLOBAL PAGE BACKGROUND
+   ============================================ */
+
+body {
+  background-color: var(--claude-parchment);
+  color: var(--claude-olive-gray);
+  font-family: var(--claude-font-sans);
+  font-size: var(--claude-size-body-standard);
+  line-height: 1.50;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.claude-text-primary {
+  color: var(--claude-near-black);
+}
+
+.claude-text-secondary {
+  color: var(--claude-olive-gray);
+}
+
+.claude-text-tertiary {
+  color: var(--claude-stone-gray);
+}
+
+.claude-text-brand {
+  color: var(--claude-terracotta);
+}
+
+.claude-bg-parchment {
+  background-color: var(--claude-parchment);
+}
+
+.claude-bg-ivory {
+  background-color: var(--claude-ivory);
+}
+
+.claude-bg-white {
+  background-color: var(--claude-pure-white);
+}
+
+/* Touch target spacing group */
+.claude-touch-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--claude-space-1);
+}
+
+@media (min-width: 640px) {
+  .claude-touch-group {
+    flex-direction: row;
+    gap: var(--claude-space-2);
+  }
+}
